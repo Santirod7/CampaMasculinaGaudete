@@ -6,7 +6,7 @@ const Logo: React.FC<{ className?: string }> = ({ className = "w-80 h-80" }) => 
 <svg
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      viewBox="0 0 200 200"
+      viewBox="0 0 810 809.999993"
     >
       <defs>
         <filter x="0%" y="0%" width="100%" height="100%" id="a">
