@@ -37,7 +37,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinished }) => {
       aria-hidden="true"
     >
       <div className="relative">
-        <Logo className="w-48 h-48 md:w-64 md:h-64" />
+        <Logo className="w-96 h-96 md:w-64 md:h-64" />
       </div>
       
       <div className="mt-8 text-white font-heading font-bold text-2xl tracking-widest uppercase">

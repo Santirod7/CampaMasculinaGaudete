@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campamento Gaudete</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        heading: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#2C4A52', // Deep Teal/Slate from the mountains
+                            dark: '#1A2E33', // Darker shade for text/bg
+                            yellow: '#FFB81C', // Golden yellow from the sun/outline
+                            orange: '#F58220', // Orange accent
+                            light: '#F4F7F6', // Off-white background
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes logo-zoom-in {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .animate-logo-zoom-in {
+            animation: logo-zoom-in 0.8s ease-out forwards;
+        }
+
+        @keyframes splash-fade-out {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        .animate-splash-fade-out {
+            animation: splash-fade-out 0.8s ease-in forwards;
+        }
+
+        @keyframes main-fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate-main-fade-in {
+            animation: main-fade-in 1s ease-in forwards;
+        }
+        
+        .progress-bar-container {
+            width: 200px;
+            height: 4px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #FFB81C;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-DU8gaBWI.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CCHfmIkr.css">
+</head>
+<body class="bg-brand-light dark:bg-gray-900 font-sans">
+    <div id="root"></div>
+</body>
+</html>

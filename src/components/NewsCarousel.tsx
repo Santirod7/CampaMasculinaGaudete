@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import type { NewsItem } from '../types';
+import type { NewsItem } from '../../types';
 
 interface NewsCarouselProps {
   items: NewsItem[];

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
-import CountdownTimer from './components/CountdownTimer';
-import NewsCarousel from './components/NewsCarousel';
-import Footer from './components/Footer';
-import SplashScreen from './components/SplashScreen';
+import Header from './src/components/Header';
+import CountdownTimer from './src/components/CountdownTimer';
+import NewsCarousel from './src/components/NewsCarousel';
+import Footer from './src/components/Footer';
+import SplashScreen from './src/components/SplashScreen';
 import type { NewsItem } from './types';
 
 // Mock data for the news carousel
@@ -52,7 +52,7 @@ const App: React.FC = () => {
         >
           <div className="absolute inset-0 bg-brand-blue/70 mix-blend-multiply"></div>
           <div className="relative z-10 p-6 flex flex-col items-center">
-            <h2 className="text-brand-yellow font-bold tracking-[0.2em] uppercase mb-2 text-sm md:text-lg">Campamento Regional 26</h2>
+            <h2 className="text-brand-yellow font-bold tracking-[0.2em] uppercase mb-2 text-sm md:text-lg">Campamento de Masculina Regional 2026</h2>
             <h1 className="text-5xl md:text-8xl font-black text-white leading-tight mb-6 font-heading drop-shadow-lg">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 stroke-text">GAUDETE</span>
             </h1>
@@ -85,13 +85,13 @@ const App: React.FC = () => {
                 </div>
                 <div className="text-left space-y-6">
                     <div className="bg-brand-light dark:bg-gray-700 p-6 rounded-xl border-l-4 border-brand-blue">
-                        <h3 className="text-2xl font-bold mb-2 font-heading text-brand-blue dark:text-brand-yellow">Nuestra Misión</h3>
+                        <h3 className="text-2xl font-bold mb-2 font-heading text-brand-yellow dark:text-brand-yellow">Nuestra Misión</h3>
                         <p className="text-gray-600 dark:text-gray-300">
                             Inspirar el crecimiento personal a través de la naturaleza y el servicio comunitario.
                         </p>
                     </div>
-                    <div className="bg-brand-light dark:bg-gray-700 p-6 rounded-xl border-l-4 border-brand-yellow">
-                        <h3 className="text-2xl font-bold mb-2 font-heading text-brand-blue dark:text-brand-yellow">La Experiencia</h3>
+                    <div className="bg-brand-light dark:bg-gray-700 p-6 rounded-xl border-l-4 border-brand-white">
+                        <h3 className="text-2xl font-bold mb-2 font-heading text-brand-yellow dark:text-brand-white">La Experiencia</h3>
                         <p className="text-gray-600 dark:text-gray-300">
                             Desafíos técnicos, fogatas llenas de mística y la construcción de un mundo mejor.
                         </p>
