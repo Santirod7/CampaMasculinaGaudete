@@ -6,7 +6,7 @@ const Logo: React.FC<{ className?: string }> = ({ className = "w-32 h-32" }) => 
         <svg 
             viewBox="0 0 200 200" 
             fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="../public/logo_campa.svg"
             className="drop-shadow-xl w-full h-full"
         >
             {/* Hexagon Border */}
