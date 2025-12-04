@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Header from './src/components/Header';
-import CountdownTimer from './src/components/CountdownTimer';
-import NewsCarousel from './src/components/NewsCarousel';
-import Footer from './src/components/Footer';
-import SplashScreen from './src/components/SplashScreen';
-import type { NewsItem } from './types';
+import Header from './components/common/Header';
+import CountdownTimer from './components/pages/CountdownTimer';
+import NewsCarousel from './components/pages/NewsCarousel';
+import Footer from './components/common/Footer';
+import SplashScreen from './components/pages/SplashScreen';
+import type { NewsItem } from '../types';
 
 // Mock data for the news carousel
 const MOCK_NEWS_ITEMS: NewsItem[] = [

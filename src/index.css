@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-logo-zoom-in {
+      animation: logo-zoom-in 0.8s ease-out forwards;
+  }
+  .animate-splash-fade-out {
+      animation: splash-fade-out 0.8s ease-in forwards;
+  }
+  .animate-main-fade-in {
+      animation: main-fade-in 1s ease-in forwards;
+  }
+}
+
+@keyframes logo-zoom-in {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes splash-fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes main-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estilos de la barra de progreso */
+.progress-bar-container {
+    width: 200px;
+    height: 4px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #FFB81C;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
