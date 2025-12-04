@@ -20,10 +20,14 @@ const calculateTimeLeft = (targetDate: Date): TimeLeft | null => {
 
 const TimeCard: React.FC<{ value: number; label: string }> = ({ value, label }) => (
   <div className="text-center">
-    <div className="text-4xl md:text-6xl font-extrabold text-white bg-black bg-opacity-30 p-4 rounded-lg shadow-lg w-24 md:w-32">
+    {/* 
+       He ajustado ligeramente el ancho (w-28) para que los números 
+       se vean cómodos ahora que hay más espacio.
+    */}
+    <div className="text-4xl md:text-6xl font-extrabold text-white bg-black bg-opacity-30 p-4 rounded-lg shadow-lg w-28 md:w-40 backdrop-blur-sm border border-white/10">
       {String(value).padStart(2, '0')}
     </div>
-    <div className="text-sm md:text-xl font-semibold uppercase text-white mt-2 tracking-wider">
+    <div className="text-sm md:text-xl font-semibold uppercase text-white mt-2 tracking-wider shadow-black drop-shadow-md">
       {label}
     </div>
   </div>
@@ -35,7 +39,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(targetDate));
-    }, 1000);
+    }, 1000); // Se sigue actualizando cada segundo para mantener la precisión interna
 
     return () => clearInterval(timer);
   }, [targetDate]);
@@ -45,11 +49,9 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   }
 
   return (
-    <div className="flex justify-center items-center gap-4 md:gap-8">
+    <div className="flex justify-center items-center gap-6 md:gap-12 mt-8">
       <TimeCard value={timeLeft.days} label="Días" />
       <TimeCard value={timeLeft.hours} label="Horas" />
-      <TimeCard value={timeLeft.minutes} label="Minutos" />
-      <TimeCard value={timeLeft.seconds} label="Segundos" />
     </div>
   );
 };
