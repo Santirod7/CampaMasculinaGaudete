@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,25 +26,25 @@ const Header: React.FC = () => {
             }`}
         >
             <div className="container mx-auto px-6 h-full flex justify-between items-center">
-                <a href="#" className="flex items-center gap-2 group">
+                <Link to="/" className="flex items-center gap-2 group">
                     <div className={`text-2xl font-black font-heading tracking-tight transition-colors duration-300 ${scrolled ? 'text-white' : 'text-white drop-shadow-md'}`}>
                         CAMPAMENTO <span className="text-brand-yellow group-hover:text-brand-orange transition-colors">GAUDETE</span>
                     </div>
-                </a>
+                </Link>
                 
                 <nav className="hidden md:flex items-center space-x-8">
-                    {['Sobre Nosotros', 'Actividades', 'Noticias'].map((item, idx) => {
-                        const href = ['#about', '#activities', '#news'][idx];
+                    {['Inicio','Quienes somos', 'Pagos', 'Suministros'].map((item, idx) => {
+                        const href = ['/', 'QuienesSomos', 'Pagos', 'Suministros'][idx];
                         return (
-                            <a 
+                            <Link 
                                 key={item} 
-                                href={href} 
+                                to={href} 
                                 className={`text-sm font-bold uppercase tracking-wide transition-colors duration-200 hover:text-brand-yellow ${
                                     scrolled ? 'text-gray-200' : 'text-white drop-shadow-md'
                                 }`}
                             >
                                 {item}
-                            </a>
+                            </Link>
                         )
                     })}
                     <a href="#register" className="px-5 py-2 bg-brand-yellow text-brand-blue font-bold rounded-full hover:bg-brand-orange hover:text-white transition-all transform hover:scale-105 shadow-md text-sm uppercase">

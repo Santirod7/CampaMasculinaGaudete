@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import type { TimeLeft } from '../../../types';
+import type { TimeLeft } from '../../types';
 
 interface CountdownTimerProps {
   targetDate: Date;
