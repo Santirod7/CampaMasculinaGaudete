@@ -45,11 +45,26 @@ const App: React.FC = () => {
       <Header />
       
       <main className="flex-grow pt-16">
-        {/* Hero Section */}
         <section 
-          className="relative h-[calc(100vh-4rem)] flex items-center justify-center text-center bg-cover bg-center" 
-          style={{backgroundImage: "url('https://picsum.photos/1920/1080?random=hero')"}}
-        >
+          className="
+    relative 
+    flex items-center justify-center text-center 
+    bg-cover bg-center bg-no-repeat
+    
+    /* ALTURA: 80% en celular, Pantalla completa en PC */
+    h-[80vh] md:h-screen
+    
+    /* IMAGEN DE FONDO: Usando sintaxis de Tailwind */
+    bg-[url('https://picsum.photos/1920/1080?random=hero')]
+    
+    /* CAPA OSCURA (Overlay): Para que el texto blanco se lea bien */
+    before:content-['']
+    before:absolute
+    before:inset-0
+    before:bg-black/50
+    before:z-0
+  "
+>
           <div className="absolute inset-0 bg-brand-blue/70 mix-blend-multiply"></div>
           <div className="relative z-10 p-6 flex flex-col items-center">
             <h2 className="text-brand-yellow font-bold tracking-[0.2em] uppercase mb-2 text-sm md:text-lg">Campamento de Masculina Regional 2026</h2>
