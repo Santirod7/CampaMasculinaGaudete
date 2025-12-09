@@ -1,68 +1,40 @@
 import React, { useState } from 'react';
-import Header from '../common/Header';   
 import CountdownTimer from './CountdownTimer';
-import NewsCarousel from './NewsCarousel';
-import Footer from '../common/Footer';
-import SplashScreen from './SplashScreen';
-import type { NewsItem } from '../../types';
-
-// Mock data for the news carousel
-const MOCK_NEWS_ITEMS: NewsItem[] = [
-  {
-    id: 1,
-    title: "¡Inscripciones Abiertas!",
-    description: "Asegura tu lugar para el Campamento Regional 26. ¡Cupos limitados!",
-    imageUrl: "https://picsum.photos/1200/800?random=1",
-  },
-  {
-    id: 2,
-    title: "Ruta de Montaña",
-    description: "Hemos diseñado una nueva ruta de senderismo que te dejará sin aliento.",
-    imageUrl: "https://picsum.photos/1200/800?random=2",
-  },
-  {
-    id: 3,
-    title: "Equipo de Guías",
-    description: "Conoce a quienes te acompañarán en esta experiencia Gaudete.",
-    imageUrl: "https://picsum.photos/1200/800?random=3",
-  },
-];
+import NewsCarousel from './NewsCarousel'; // Importamos el componente renovado
+import PaymentModal from '../ui/PaymentModal';
 
 const Inicio: React.FC = () => {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showModal, setShowModal] = useState(false); // Estado para el Modal
 
-  // Set the target date to January 9th of the next year.
+  // Links para el Modal
+  const LINK_PLATAFORMA_PAGO = "https://link-a-tu-plataforma-de-pago.com"; 
+  const LINK_FORMULARIO = "https://docs.google.com/forms/d/e/1FAIpQLSfIjhcHaiOwHOWcrbJ9SIZ2Iw9RWsfkz9q6xig81ArrI8Sjpg/viewform";
+
+  // Configuración Fecha Contador
   const now = new Date();
   const targetYear = now.getMonth() === 0 && now.getDate() < 9 ? now.getFullYear() : now.getFullYear() + 1;
   const targetDate = new Date(targetYear, 0, 9);
 
-  if (showSplash) {
-    return <SplashScreen onFinished={() => setShowSplash(false)} />;
-  }
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-light dark:bg-gray-900 text-brand-dark dark:text-gray-200 animate-main-fade-in font-sans">    
       <main className="flex-grow pt-16">
+        
+        {/* --- HERO SECTION --- */}
         <section 
           className="
-    relative 
-    flex items-center justify-center text-center 
-    bg-cover bg-center bg-no-repeat
-    
-    /* ALTURA: 80% en celular, Pantalla completa en PC */
-    h-[80vh] md:h-screen
-    
-    /* IMAGEN DE FONDO: Usando sintaxis de Tailwind */
-    bg-[url('https://picsum.photos/1920/1080?random=hero')]
-    
-    /* CAPA OSCURA (Overlay): Para que el texto blanco se lea bien */
-    before:content-['']
-    before:absolute
-    before:inset-0
-    before:bg-black/50
-    before:z-0
-  "
->
+            relative 
+            flex items-center justify-center text-center 
+            bg-cover bg-center bg-no-repeat
+            h-[80vh] md:h-screen
+            bg-[url('https://picsum.photos/1920/1080?random=hero')]
+            before:content-['']
+            before:absolute
+            before:inset-0
+            before:bg-black/50
+            before:z-0
+          "
+        >
           <div className="absolute inset-0 bg-brand-blue/70 mix-blend-multiply"></div>
           <div className="relative z-10 p-6 flex flex-col items-center">
             <h2 className="text-brand-yellow font-bold tracking-[0.2em] uppercase mb-2 text-sm md:text-lg">Campamento de Masculina Regional 2026</h2>
@@ -78,11 +50,21 @@ const Inicio: React.FC = () => {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-20 md:py-32 bg-white dark:bg-gray-800 relative overflow-hidden">
-          {/* Decorative background element */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        {/* --- BOLETÍN INFORMATIVO (USANDO EL COMPONENTE) --- */}
+        <section id="news" className="py-20 md:py-32 bg-brand-light dark:bg-gray-900">
+            <div className="container mx-auto px-6">
+                <h2 className="text-3xl md:text-5xl font-black text-center mb-12 text-brand-blue dark:text-white font-heading uppercase">
+                  Boletín <span className="text-brand-orange">Informativo</span>
+                </h2>
+                
+                {/* Aquí usamos el componente y le pasamos la función para abrir el modal */}
+                <NewsCarousel onOpenModal={() => setShowModal(true)} />
+            </div>
+        </section>
 
+        {/* --- ESPÍRITU GAUDETE --- */}
+        <section id="about" className="py-20 md:py-32 bg-white dark:bg-gray-800 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="container mx-auto px-6 text-center relative z-10">
             <h2 className="text-3xl md:text-5xl font-black text-brand-blue dark:text-white mb-6 font-heading uppercase">
               Espíritu <span className="text-brand-yellow">Gaudete</span>
@@ -94,7 +76,7 @@ const Inicio: React.FC = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-brand-blue transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <img src="https://picsum.photos/800/600?random=about1" alt="Campers around a fire" className="w-full h-full object-cover" />
+                    <img src="https://picsum.photos/800/600?random=about1" alt="Campers" className="w-full h-full object-cover" />
                 </div>
                 <div className="text-left space-y-6">
                     <div className="bg-brand-light dark:bg-gray-700 p-6 rounded-xl border-l-4 border-brand-blue">
@@ -114,10 +96,9 @@ const Inicio: React.FC = () => {
           </div>
         </section>
 
-        {/* Activities Section */}
+        {/* --- ACTIVIDADES --- */}
         <section id="activities" className="py-20 md:py-32 bg-brand-blue text-white relative">
           <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "30px 30px"}}></div>
-          
           <div className="container mx-auto px-6 relative z-10">
             <h2 className="text-3xl md:text-5xl font-black text-center mb-4 font-heading text-white uppercase">Nuestras Actividades</h2>
             <p className="text-center text-brand-yellow mb-16 font-semibold tracking-wider">AVENTURA SIN LÍMITES</p>
@@ -131,7 +112,7 @@ const Inicio: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2 font-heading text-brand-yellow">{activity}</h3>
-                    <p className="text-gray-400 text-sm">Desarrolla tus habilidades y supera tus propios límites en esta actividad diseñada para el crecimiento.</p>
+                    <p className="text-gray-400 text-sm">Desarrolla tus habilidades y supera tus propios límites.</p>
                   </div>
                 </div>
               ))}
@@ -139,17 +120,15 @@ const Inicio: React.FC = () => {
           </div>
         </section>
 
-        {/* News Section */}
-        <section id="news" className="py-20 md:py-32 bg-brand-light dark:bg-gray-900">
-            <div className="container mx-auto px-6">
-                <h2 className="text-3xl md:text-5xl font-black text-center mb-12 text-brand-blue dark:text-white font-heading uppercase">
-                  Boletín <span className="text-brand-orange">Informativo</span>
-                </h2>
-                <NewsCarousel items={MOCK_NEWS_ITEMS} />
-            </div>
-        </section>
-
       </main>
+
+      {/* MODAL (Vive aquí para poder abrirse sobre todo) */}
+      <PaymentModal 
+        isOpen={showModal} 
+        onClose={() => setShowModal(false)} 
+        paymentLink={LINK_PLATAFORMA_PAGO}
+        formLink={LINK_FORMULARIO}
+      />
     </div>
   );
 };

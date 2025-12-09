@@ -1,66 +1,107 @@
-
-import React, { useState, useEffect, useCallback } from 'react';
-import type { NewsItem } from '../../types';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 interface NewsCarouselProps {
-  items: NewsItem[];
+  onOpenModal: () => void; // Recibimos la función para abrir el modal desde el padre
 }
 
-const NewsCarousel: React.FC<NewsCarouselProps> = ({ items }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const NewsCarousel: React.FC<NewsCarouselProps> = ({ onOpenModal }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
-  const goToPrevious = useCallback(() => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? items.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  }, [currentIndex, items.length]);
+  // --- DATOS ESPECÍFICOS DEL CARRUSEL ---
+  const slides = [
+    {
+      id: 1,
+      image: "https://images.unsplash.com/photo-1517178313056-6a2c531d041e?q=80&w=2070",
+      title: "INSCRIPCIÓN ABIERTA",
+      subtitle: "Asegura tu lugar en la fila. Cupos limitados.",
+      action: "INSCRIBIRSE AHORA",
+      type: "modal"
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1496545672479-7ac37b969871?q=80&w=2070",
+      title: "CONOCIENDO EL TERRENO",
+      subtitle: "Descubre dónde se librará la batalla.",
+      action: "VER UBICACIÓN",
+      type: "link_externo",
+      url: "https://goo.gl/maps/tu-link-del-camping" // <--- PON TU LINK DE MAPS
+    },
+    {
+      id: 3,
+      image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1974",
+      title: "PREPARACIÓN ESPIRITUAL",
+      subtitle: "Revisa los suministros necesarios para el combate.",
+      action: "VER SUMINISTROS",
+      type: "link_interno",
+      path: "/suministros"
+    }
+  ];
 
-  const goToNext = useCallback(() => {
-    const isLastSlide = currentIndex === items.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  }, [currentIndex, items.length]);
-
+  // Loop automático
   useEffect(() => {
-    const slideInterval = setInterval(goToNext, 5000);
-    return () => clearInterval(slideInterval);
-  }, [goToNext]);
-  
-  if (!items || items.length === 0) {
-    return <div>No news items to display.</div>;
-  }
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  // Manejador de clics
+  const handleSlideClick = (slide: any) => {
+    if (slide.type === 'modal') {
+      onOpenModal(); // Llama a la función del padre
+    } else if (slide.type === 'link_externo') {
+      window.open(slide.url, '_blank');
+    } else if (slide.type === 'link_interno') {
+      navigate(slide.path);
+    }
+  };
 
   return (
-    <div className="relative w-full max-w-5xl mx-auto h-96 md:h-[500px] overflow-hidden rounded-lg shadow-2xl">
-      <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10 cursor-pointer bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 transition-colors" onClick={goToPrevious} aria-label="Previous slide">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </div>
-      <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-10 cursor-pointer bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75 transition-colors" onClick={goToNext} aria-label="Next slide">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-      <div className="w-full h-full flex transition-transform ease-out duration-500" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-        {items.map((item) => (
-          <div key={item.id} className="w-full h-full flex-shrink-0 relative">
-            <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 p-8 text-white">
-              <h3 className="text-3xl md:text-4xl font-bold mb-2">{item.title}</h3>
-              <p className="text-base md:text-lg">{item.description}</p>
-            </div>
+    <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl group cursor-pointer border border-gray-200 dark:border-gray-700 max-w-6xl mx-auto">
+      {slides.map((slide, index) => (
+        <div 
+          key={slide.id}
+          onClick={() => handleSlideClick(slide)}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+        >
+          {/* Imagen de fondo con efecto zoom */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center transform group-hover:scale-105 transition-transform duration-[2000ms]"
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            {/* Overlay oscuro */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
           </div>
-        ))}
-      </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {items.map((_, index) => (
+
+          {/* Textos */}
+          <div className="absolute bottom-0 left-0 p-8 md:p-16 w-full md:w-2/3 text-left">
+            <span className="inline-block bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded mb-4 shadow-lg uppercase tracking-wider">
+              Novedad
+            </span>
+            <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 font-heading leading-tight drop-shadow-md">
+              {slide.title}
+            </h3>
+            <p className="text-lg text-gray-200 mb-8 max-w-lg drop-shadow-sm">
+              {slide.subtitle}
+            </p>
+            
+            <button className="flex items-center gap-2 text-brand-yellow font-bold tracking-wider hover:text-white transition-colors group/btn">
+              {slide.action} <ArrowRight className="group-hover/btn:translate-x-2 transition-transform"/>
+            </button>
+          </div>
+        </div>
+      ))}
+
+      {/* Puntos indicadores */}
+      <div className="absolute bottom-8 right-8 flex space-x-3 z-20">
+        {slides.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-white' : 'bg-white/50'} transition-colors`}
-            aria-label={`Go to slide ${index + 1}`}
+            onClick={(e) => { e.stopPropagation(); setCurrentSlide(index); }}
+            className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-brand-yellow w-8' : 'bg-gray-400 w-2 hover:bg-white'}`}
           />
         ))}
       </div>
