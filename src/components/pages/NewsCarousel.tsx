@@ -27,7 +27,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = ({ onOpenModal }) => {
       subtitle: "Descubre dónde se librará la batalla.",
       action: "VER UBICACIÓN",
       type: "link_externo",
-      url: "https://goo.gl/maps/tu-link-del-camping" // <--- PON TU LINK DE MAPS
+      url: "https://maps.app.goo.gl/F11DA7ZDhkSz3dHg8?g_st=iw" // <--- PON TU LINK DE MAPS
     },
     {
       id: 3,
