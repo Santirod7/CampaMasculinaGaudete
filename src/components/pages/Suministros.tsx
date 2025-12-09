@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { Flag, Image, Gamepad2, BrainCircuit, ExternalLink, Calendar, MapPin, CheckCircle } from 'lucide-react';
-import Header from '../common/Header';   
-import Footer from '../common/Footer';
-import SplashScreen from './SplashScreen';
 import PaymentModal from '../ui/PaymentModal';
 
 const Suministros: React.FC = () => {
@@ -82,7 +79,6 @@ const Suministros: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-900 text-slate-200 font-sans animate-main-fade-in">    
-      <Header />
       
       <main className="flex-grow pt-24 px-4 pb-20">
         
@@ -181,7 +177,6 @@ const Suministros: React.FC = () => {
 
       </main>
       
-      <Footer />
 
       <PaymentModal 
         isOpen={showModal} 
