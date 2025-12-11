@@ -1,190 +1,278 @@
-import React, { useState } from 'react';
-import { Tent, Music, Users, MapPin, Flame, Shield, ArrowDown } from 'lucide-react';
-import SplashScreen from './SplashScreen';
-import PaymentModal from '../ui/PaymentModal';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  Clock, 
+  MapPin, 
+  ArrowRight, 
+  Backpack, 
+  ShieldCheck, 
+  CreditCard,
+  FileCheck,
+  Shield,
+  ChevronRight,
+  ExternalLink,
+  Tent,
+  Users,
+  Sword,
+  Crown
+} from 'lucide-react';
 
-const QuienesSomos: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
-
-  // Links (Mismos que en inicio)
-  const LINK_PLATAFORMA_PAGO = "https://link-a-tu-plataforma-de-pago.com"; 
-  const LINK_FORMULARIO = "https://docs.google.com/forms/d/e/1FAIpQLSfIjhcHaiOwHOWcrbJ9SIZ2Iw9RWsfkz9q6xig81ArrI8Sjpg/viewform";
-
+const QuienesSomos = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-900 text-slate-200 font-sans animate-main-fade-in">          
-      <main className="flex-grow pt-16">
-        
-        {/* --- HERO SECTION: IDENTIDAD --- */}
-        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-cover bg-center z-0"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1510525009512-ad7fc13eefab?q=80&w=2069')" }} // Foto de montañas/norte
-          >
-             <div className="absolute inset-0 bg-slate-900/70 mix-blend-multiply"></div>
-          </div>
-
-          <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-10">
-            <span className="inline-block py-1 px-3 border border-amber-500 rounded-full text-amber-500 text-xs font-bold tracking-widest uppercase mb-4 animate-fade-in-down">
-              Fasta - Agrupación Masculina
-            </span>
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 font-heading tracking-tight drop-shadow-2xl">
-              REGIÓN NORTE
-            </h1>
-            <p className="text-xl text-slate-200 font-light max-w-2xl mx-auto italic">
-              "Herederos de una tradición, constructores del futuro. La fuerza del norte unida bajo una misma bandera."
-            </p>
-            
-            <div className="mt-8 animate-bounce">
-                <ArrowDown className="text-amber-500 mx-auto" />
-            </div>
-          </div>
-        </section>
-
-        {/* --- INTRODUCCIÓN: QUIÉNES SOMOS --- */}
-        <section className="py-20 bg-slate-950">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row items-center gap-12">
-                    <div className="w-full md:w-1/2">
-                        <h2 className="text-3xl md:text-4xl font-black text-white font-heading uppercase mb-6 leading-tight">
-                            La Milicia del <span className="text-amber-500">Norte Argentino</span>
-                        </h2>
-                        <div className="space-y-4 text-slate-300 text-lg leading-relaxed">
-                            <p>
-                                Somos la comunidad de agrupaciones masculinas de Fasta ubicadas en el histórico norte de nuestra patria. 
-                                Desde Tucumán, Salta y Jujuy, unimos nuestras fuerzas para formar hombres de bien, católicos y comprometidos.
-                            </p>
-                            <p>
-                                Nuestra pedagogía se basa en la exigencia, la vida al aire libre y la formación del carácter. 
-                                No somos un simple club de amigos; somos una milicia espiritual que busca la santidad a través del servicio.
-                            </p>
-                        </div>
-                        
-                        {/* Pequeños datos */}
-                        <div className="grid grid-cols-2 gap-4 mt-8">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 bg-slate-800 rounded-lg text-amber-500"><MapPin size={20}/></div>
-                                <span className="text-sm font-bold text-white">Tucumán, Salta, Jujuy</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 bg-slate-800 rounded-lg text-amber-500"><Shield size={20}/></div>
-                                <span className="text-sm font-bold text-white">Estilo Miliciano</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className="w-full md:w-1/2">
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 group">
-                            <img 
-                                src="https://images.unsplash.com/photo-1526638684360-95eb6291d731?q=80&w=2070" 
-                                alt="Formación Fasta" 
-                                className="w-full h-[400px] object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700" 
-                            />
-                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-slate-900 to-transparent p-6">
-                                <p className="text-white font-bold text-lg">"A tus órdenes, Señor."</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* --- LA VIDA CAMPAMENTERA (CORE) --- */}
-        <section className="py-24 bg-slate-900 relative">
-            {/* Decoración de fondo */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/5 rounded-full blur-3xl"></div>
-
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-black text-white font-heading uppercase">Nuestro Estilo de Vida</h2>
-                    <p className="text-amber-500 font-bold tracking-widest mt-2">MÍSTICA Y DISCIPLINA</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    {/* CARD 1: CIUDAD DE LONA */}
-                    <div className="bg-slate-800 rounded-xl p-8 border-t-4 border-amber-500 hover:-translate-y-2 transition-transform duration-300 shadow-xl group">
-                        <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-slate-900 transition-colors">
-                            <Tent size={32} />
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4 font-heading">La Ciudad de Lona</h3>
-                        <p className="text-slate-400 leading-relaxed">
-                            No vamos de "camping", vamos a fundar una ciudad. Cada carpa levantada es un hogar, cada rincón cuidado es un acto de servicio. 
-                            En la precariedad de la lona aprendemos que lo esencial no está en las comodidades, sino en con quién las compartes.
-                        </p>
-                    </div>
-
-                    {/* CARD 2: CANTAR MARCHAS */}
-                    <div className="bg-slate-800 rounded-xl p-8 border-t-4 border-amber-600 hover:-translate-y-2 transition-transform duration-300 shadow-xl group">
-                        <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-6 text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                            <Music size={32} />
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4 font-heading">El Canto Miliciano</h3>
-                        <p className="text-slate-400 leading-relaxed">
-                            Nuestras gargantas no callan. Cantar marchas no es solo ruido; es elevar el espíritu cuando el cuerpo está cansado. 
-                            Es la mística hecha voz que une a la escuadra y le recuerda que, incluso en la marcha más dura, la alegría es innegociable.
-                        </p>
-                    </div>
-
-                    {/* CARD 3: FOGÓN Y HERMANDAD */}
-                    <div className="bg-slate-800 rounded-xl p-8 border-t-4 border-amber-700 hover:-translate-y-2 transition-transform duration-300 shadow-xl group">
-                        <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-6 text-amber-700 group-hover:bg-amber-700 group-hover:text-white transition-colors">
-                            <Flame size={32} />
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4 font-heading">El Fuego que Une</h3>
-                        <p className="text-slate-400 leading-relaxed">
-                            Al final del día, el fuego nos reúne. Es el momento de la verdad, de las risas y de la reflexión profunda. 
-                            Frente a las brasas, las diferencias desaparecen y se forja esa amistad viril y duradera que caracteriza al miliciano de Fasta.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        {/* --- LLAMADO A LOS PADRES (SEGURIDAD) --- */}
-        <section className="py-20 bg-slate-950 border-t border-slate-800">
-            <div className="container mx-auto px-6">
-                <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 border border-slate-700 flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div className="max-w-2xl">
-                        <h3 className="text-2xl font-bold text-white mb-4">¿Por qué este campamento?</h3>
-                        <p className="text-slate-300 mb-4">
-                            En un mundo cómodo, ofrecemos desafío. En un mundo individualista, ofrecemos comunidad. 
-                            Este campamento regional es la oportunidad perfecta para que sus hijos vivan los valores del Evangelio 
-                            en un entorno seguro, formativo y lleno de aventura.
-                        </p>
-                        <div className="flex items-center gap-6 mt-6">
-                            <div className="flex items-center gap-2 text-amber-500 font-bold">
-                                <Users size={20} />
-                                <span>Contención</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-amber-500 font-bold">
-                                <Shield size={20} />
-                                <span>Seguridad</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button 
-                        onClick={() => setShowModal(true)}
-                        className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider shadow-lg hover:shadow-amber-600/20 transition-all whitespace-nowrap"
-                    >
-                        Sumarse a la Fila
-                    </button>
-                </div>
-            </div>
-        </section>
-
-      </main>
+    <div className="min-h-screen bg-slate-900 text-slate-200 overflow-x-hidden">
       
-      {/* Modal para inscribirse desde el botón de abajo */}
-      <PaymentModal 
-        isOpen={showModal} 
-        onClose={() => setShowModal(false)} 
-        paymentLink={LINK_PLATAFORMA_PAGO}
-        formLink={LINK_FORMULARIO}
-      />
+      {/* --- HERO HEADER --- */}
+      <div className="relative w-full h-[50vh] min-h-[450px] flex items-center justify-center mb-16">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?q=80&w=2070" 
+            alt="Comunidad Campamento" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-4 mt-8">
+          <div className="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-blue-500/20 border border-blue-500/50 text-blue-400 text-xs font-bold tracking-[0.2em] uppercase mb-4 backdrop-blur-md shadow-[0_0_20px_rgba(59,130,246,0.3)] animate-fade-in-up">
+            <Tent size={14} /> Información General
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-tight drop-shadow-2xl">
+            Centro de Información
+          </h1>
+          <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
+            Todo lo que necesitas saber sobre logística, ubicación y preparación. 
+            <br className="hidden md:block"/>
+            <span className="text-slate-400 text-base">Diseñado para milicianos y familias.</span>
+          </p>
+        </div>
+      </div>
+
+      {/* --- SECCIÓN 1: GRILLA INFORMATIVA --- */}
+      <div className="max-w-7xl mx-auto px-4 mb-24 relative z-10 -mt-10">
+        <div className="grid md:grid-cols-3 gap-6">
+          
+          {/* TARJETA 1: CONVOCATORIA (DARK) */}
+          <div className="bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-700 group hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            <div className="h-40 overflow-hidden relative shrink-0">
+              <div className="absolute inset-0 bg-slate-900/40 z-10 group-hover:bg-slate-900/20 transition-all"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2000" 
+                alt="Convocatoria" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+              />
+              <div className="absolute bottom-3 left-4 z-20">
+                <h3 className="text-xl font-bold text-white font-serif drop-shadow-md">Convocatoria</h3>
+                <p className="text-amber-400 text-xs font-bold uppercase tracking-wider">Edades y Secciones</p>
+              </div>
+            </div>
+            
+            <div className="p-4 space-y-2 bg-slate-800 flex-grow flex flex-col justify-center">
+                <h4 className="text-center text-xs text-slate-400 uppercase tracking-widest font-bold mb-2">Depende tu edad, esta es tu sección:</h4>
+              {/* Rango 1 */}
+              <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 transition-colors border border-transparent hover:border-slate-600">
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-500/10 p-2 rounded text-blue-400"><Shield size={16}/></div>
+                  <span className="text-sm font-bold text-slate-200">Sección Escuderos</span>
+                </div>
+                <span className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">9 - 12 años</span>
+              </div>
+
+              {/* Rango 2 */}
+              <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 transition-colors border border-transparent hover:border-slate-600">
+                <div className="flex items-center gap-3">
+                  <div className="bg-amber-500/10 p-2 rounded text-amber-400"><Sword size={16}/></div>
+                  <span className="text-sm font-bold text-slate-200">Templarios Menores</span>
+                </div>
+                <span className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">13 - 16 años</span>
+              </div>
+
+              {/* Rango 3 */}
+              <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 transition-colors border border-transparent hover:border-slate-600">
+                <div className="flex items-center gap-3">
+                  <div className="bg-red-500/10 p-2 rounded text-red-400"><Crown size={16}/></div>
+                  <span className="text-sm font-bold text-slate-200">Templarios Mayores</span>
+                </div>
+                <span className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">17 - 18 años</span>
+              </div>
+            </div>
+          </div>
+
+          {/* TARJETA 2: LOGÍSTICA Y UBICACIÓN (DARK) */}
+          <div className="bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-700 group hover:-translate-y-1 transition-all duration-300 flex flex-col">
+            <div className="h-40 overflow-hidden relative shrink-0">
+              <div className="absolute inset-0 bg-slate-900/40 z-10 group-hover:bg-slate-900/20 transition-all"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2000" 
+                alt="Logística" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+              />
+              <div className="absolute bottom-3 left-4 z-20">
+                <h3 className="text-xl font-bold text-white font-serif drop-shadow-md">Logística y Ubicación</h3>
+                <p className="text-amber-400 text-xs font-bold uppercase tracking-wider">Fechas Clave</p>
+              </div>
+            </div>
+            
+            <div className="p-5 space-y-4 bg-slate-800 flex-grow">
+              <div className="space-y-3 pb-3 border-b border-slate-700">
+                <div className="flex items-center gap-3">
+                  <Clock className="text-green-500 shrink-0" size={18} />
+                  <div>
+                    <p className="text-slate-300 text-sm font-bold">IDA: 9 Enero - 13:00hs</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock className="text-red-500 shrink-0" size={18} />
+                  <div>
+                    <p className="text-slate-300 text-sm font-bold">VUELTA: 14 Enero - 16:00hs</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin className="text-amber-500" size={18}/>
+                  <span className="text-slate-200 text-sm font-bold">San Pedro de Colalao</span>
+                </div>
+                <p className="text-slate-500 text-xs mb-3 ml-6">Provincia de Tucumán. Finca "El Chula".</p>
+                <a href="https://maps.google.com/?q=San+Pedro+de+Colalao+Tucuman" target="_blank" rel="noreferrer" className="w-full block text-center bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold py-2 rounded transition-colors">
+                  VER MAPA (GOOGLE MAPS)
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* TARJETA 3: PREPARACIÓN (WHITE / LIGHT) */}
+          {/* CAMBIO CLAVE: bg-white, textos negros, diseño distinto */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200 group hover:-translate-y-1 transition-all duration-300 flex flex-col relative">
+            <div className="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-20 shadow-md">
+              LISTA OFICIAL
+            </div>
+            
+            <div className="h-40 overflow-hidden relative shrink-0">
+              <div className="absolute inset-0 bg-slate-900/10 z-10 group-hover:bg-slate-900/5 transition-all"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1624523992220-43b59a68ccb2?q=80&w=2000" 
+                alt="Mochila" 
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+              />
+              <div className="absolute bottom-3 left-4 z-20">
+                <h3 className="text-xl font-bold text-white font-serif drop-shadow-md">Mochila</h3>
+                {/* Mantengo texto blanco AQUI sobre la imagen por contraste */}
+                <p className="text-slate-100 text-xs font-bold uppercase tracking-wider drop-shadow">Camino al Campamento</p>
+              </div>
+            </div>
+            
+            {/* Cuerpo Blanco con letras Negras/Grises */}
+            <div className="p-6 bg-white flex-grow flex flex-col items-center justify-center text-center space-y-4">
+              <div>
+                <h4 className="text-lg font-bold text-slate-900 mb-2">¿Qué debo llevar?</h4>
+                <p className="text-slate-600 text-sm leading-relaxed font-medium">
+                  Lista oficial de ropa, elementos de higiene y supervivencia obligatorios.
+                </p>
+              </div>
+              <Link 
+                to="/suministros" 
+                className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-lg w-full justify-center"
+              >
+                VER LISTADO <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* --- SECCIÓN 2: EL PUENTE (GUÍA DE INSCRIPCIÓN) --- */}
+      <section className="py-16 relative mb-16">
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-1 border border-slate-700 shadow-2xl relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/0 via-amber-500/20 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-xl"></div>
+            <div className="bg-slate-900/90 rounded-[22px] p-8 md:p-12 relative h-full">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+                
+                {/* Lado Izquierdo */}
+                <div className="lg:w-2/5 text-center lg:text-left space-y-6">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-bold border border-green-500/20 uppercase tracking-wider">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    Trámite Online
+                  </div>
+                  <h2 className="text-3xl font-bold text-white font-serif leading-tight">
+                    ¿Cómo me inscribo?
+                  </h2>
+                  <p className="text-slate-400 text-base leading-relaxed">
+                    Hemos preparado un instructivo interactivo fácil de seguir para realizar el pago y el alta del seguro.
+                  </p>
+                  <Link to="/pagos" className="inline-flex items-center justify-center gap-3 bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-amber-600/20 transform hover:-translate-y-1 transition-all w-full lg:w-auto text-lg">
+                    ABRIR GUÍA DE INSCRIPCIÓN <ArrowRight size={22} />
+                  </Link>
+                </div>
+
+                {/* Lado Derecho: Diagrama */}
+                <div className="lg:w-3/5 w-full">
+                  <div className="bg-slate-950/50 rounded-2xl p-6 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 relative">
+                    <div className="hidden md:block absolute top-1/2 left-10 right-10 h-0.5 bg-slate-700 -z-10"></div>
+                    <StepPreview icon={<CreditCard className="text-amber-500" />} label="1. Pago" />
+                    <ChevronRight className="text-slate-600 md:hidden" />
+                    <StepPreview icon={<FileCheck className="text-blue-500" />} label="2. Comprobante" />
+                    <ChevronRight className="text-slate-600 md:hidden" />
+                    <StepPreview icon={<ShieldCheck className="text-green-500" />} label="3. Inscripción" />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- SECCIÓN 3: MAPA DETALLADO --- */}
+      <div className="max-w-7xl mx-auto px-4 mb-20">
+        <div className="bg-slate-800 rounded-3xl overflow-hidden shadow-xl border border-slate-700 flex flex-col md:flex-row">
+            <div className="md:w-1/3 p-8 md:p-12 flex flex-col justify-center items-start">
+              <div className="flex items-center gap-2 text-amber-500 mb-4">
+                <MapPin size={24} /> <span className="font-bold tracking-wider text-sm uppercase">Punto de Encuentro</span>
+              </div>
+              <h2 className="text-3xl font-bold text-white mb-4 font-serif">Campo La Estancia</h2>
+              <p className="text-slate-400 mb-8 text-sm leading-relaxed">
+                Ubicado en San Pedro de Colalao, Tucumán.<br/>
+                El transporte sale puntual desde la sede regional.
+              </p>
+              <a 
+                href="https://maps.google.com/?q=San+Pedro+de+Colalao+Tucuman" 
+                target="_blank" 
+                rel="noreferrer"
+                className="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center gap-2 border border-slate-600 hover:border-slate-500 w-full md:w-auto justify-center"
+              >
+                ABRIR GPS (GOOGLE MAPS) <ExternalLink size={16} />
+              </a>
+            </div>
+            <div className="md:w-2/3 bg-slate-900 relative h-80 md:h-auto group">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14197.876797825313!2d-65.5000000!3d-26.2333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94223f66c9cc2a43%3A0x6b776269555c8296!2sSan%20Pedro%20de%20Colalao%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy"
+                className="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100"
+              ></iframe>
+            </div>
+        </div>
+      </div>
+
     </div>
   );
 };
+
+// --- COMPONENTE AUXILIAR ---
+const StepPreview = ({ icon, label }: any) => (
+  <div className="flex flex-col items-center text-center gap-3 bg-slate-900 p-4 rounded-xl border border-slate-800 w-full md:w-32 shadow-xl z-10 hover:border-slate-600 transition-colors">
+    <div className="p-3 bg-slate-800 rounded-full shadow-inner">
+      {React.cloneElement(icon, { size: 24 })}
+    </div>
+    <div className="font-bold text-white text-sm">{label}</div>
+  </div>
+);
 
 export default QuienesSomos;
