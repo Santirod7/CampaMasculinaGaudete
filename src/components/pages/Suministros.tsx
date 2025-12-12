@@ -134,9 +134,9 @@ const Suministros = () => {
           <div className="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-amber-500/20 border border-amber-500/50 text-amber-400 text-xs font-bold tracking-[0.2em] uppercase mb-4 backdrop-blur-md shadow-lg">
             <Cross size={14} /> Vida Eucarística
           </div>
-          <h1 className="text-4xl md:text-6xl font-black font-serif uppercase tracking-tight mb-4 drop-shadow-2xl">
-            <span className="text-white">Preparación </span>
-            <span className="text-amber-500">Espiritual</span>
+          <h1 className="text-4xl md:text-5xl font-black font-serif uppercase tracking-tight mb-4 drop-shadow-2xl">
+            <span className="text-white">Camino al </span>
+            <span className="text-yellow-500">campamento</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
             "Empezaremos este camino de preparación comunitaria con los siguientes HITOS."
@@ -249,7 +249,7 @@ const Suministros = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <CategoryCard 
             title="Zona de Descanso" icon={<Tent className="text-amber-500" size={24} />}
-            items={["Bolsa de dormir (Abrigada)", "Aislante térmico", "Carpa (Coordinar)", "Manta extra"]}
+            items={["Bolsa de dormir (Abrigada)", "Aislante térmico", "Manta extra"]}
           />
           <CategoryCard 
             title="Rancho (Comida)" icon={<Utensils className="text-blue-500" size={24} />}
@@ -257,11 +257,11 @@ const Suministros = () => {
           />
           <CategoryCard 
             title="Indumentaria" icon={<Shirt className="text-green-500" size={24} />}
-            items={["Uniforme completo", "Ropa fajina (Resistente)", "Abrigo (Polar/Campera)", "2 pares zapatillas", "Ropa interior (x6)", "Gorra/Sombrero"]}
+            items={["Uniforme completo", "Ropa fajina (Resistente)", "Abrigo (Polar/Campera)", "3 pares zapatillas", "Ropa interior (x4)", "Gorra/Sombrero"]}
           />
           <CategoryCard 
             title="Higiene" icon={<BriefcaseMedical className="text-red-500" size={24} />}
-            items={["Neceser personal", "Toallón y ojotas", "Repelente (x2)", "Protector Solar"]}
+            items={["Necesario personal", "Toallón y ojotas", "Repelente (x2)", "Protector Solar"]}
           />
           <CategoryCard 
             title="Táctico / Varios" icon={<Flashlight className="text-slate-400" size={24} />}

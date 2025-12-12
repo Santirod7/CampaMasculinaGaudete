@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircleMore } from 'lucide-react';
 
 const WhatsAppButton = () => {
   // Reemplaza XXXXXXXXXX con tu número real (ej: 5493512345678)
@@ -16,7 +16,7 @@ const WhatsAppButton = () => {
       className="fixed bottom-6 right-6 z-[100] bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center animate-bounce-slow"
       aria-label="Contactar por WhatsApp"
     >
-      <MessageCircle size={32} />
+      <MessageCircleMore size={32} />
     </a>
   );
 };

@@ -9,6 +9,7 @@ import SplashScreen from './components/pages/SplashScreen';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import QuienesSomos from './components/pages/QuienesSomos';
 import Suministros from './components/pages/Suministros';
+import BackgroundMusicPlayer from './components/ui/BackgroundMusicPlayer';
 // Importaremos las otras páginas a medida que las creemos
 // import Pagos from './pages/Pagos'; 
 
@@ -30,15 +31,16 @@ function App() {
       <Routes>
         {/* Cuando la ruta es "/", muestra tu diseño de Inicio */}
       <Route path="/" element={<Inicio />} />
-      <Route path="/quienes-somos" element={<QuienesSomos />} />
+      <Route path="/centro-de-informacion" element={<QuienesSomos />} />
       <Route path="/pagos" element={<Pagos />} />
-      <Route path="/suministros" element={<Suministros />} />
+      <Route path="/preparacion" element={<Suministros />} />
         {/* Aquí agregaremos las otras secciones en el futuro */}
         {/* <Route path="/pagos" element={<Pagos />} /> */}
       </Routes>
       </main>
       <Footer />
       <WhatsAppButton />
+      <BackgroundMusicPlayer />
     </div>      
     </Router>
   );

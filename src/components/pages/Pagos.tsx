@@ -167,9 +167,9 @@ const Pagos = () => {
               <AlertCard 
                 icon={<Users size={24} />} 
                 color="blue" 
-                date="20 de Noviembre" 
-                title="Descuento Hermanos" 
-                text="Solicita tu descuento al encargado de Ruca antes de esta fecha límite."
+                date="20 de Diciembre" 
+                title="Atraso en las Cuotas" 
+                text="Debes pagar las 2 cuotas pendientes (Noviembre y Diciembre) antes de esta fecha."
               />
               <AlertCard 
                 icon={<CalendarCheck size={24} />} 

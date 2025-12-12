@@ -52,9 +52,8 @@ const Header: React.FC = () => {
                     <nav className="hidden md:flex items-center space-x-8">
                         {[
                             { name: 'Inicio', path: '/' },
-                            { name: 'Quienes somos', path: '/quienes-somos' },
-                            { name: 'Pagos', path: '/pagos' },
-                            { name: 'Suministros', path: '/suministros' }
+                            { name: 'Centro de información', path: '/centro-de-informacion' },
+                            { name: 'Camino al campamento', path: '/preparacion' }
                         ].map((item) => (
                             <Link 
                                 key={item.name} 
@@ -67,12 +66,12 @@ const Header: React.FC = () => {
                             </Link>
                         ))}
                         
-                        <button 
-                            onClick={() => setShowModal(true)}
+                        <Link 
+                            to="/pagos"
                             className="px-5 py-2 bg-brand-yellow text-brand-blue font-bold rounded-full hover:bg-brand-orange hover:text-white transition-all transform hover:scale-105 shadow-md text-sm uppercase cursor-pointer"
                         >
-                            Inscribirse
-                        </button>
+                            Quiero sumarme
+                        </Link>
                     </nav>
 
                     {/* HAMBURGUESA MÓVIL */}
@@ -91,9 +90,8 @@ const Header: React.FC = () => {
                     <div className="flex flex-col px-6 py-4 space-y-4">
                         {[
                             { name: 'Inicio', path: '/' },
-                            { name: 'Quienes somos', path: '/quienes-somos' },
-                            { name: 'Pagos', path: '/pagos' },
-                            { name: 'Suministros', path: '/suministros' }
+                            { name: 'Centro de información', path: '/centro-de-informacion' },
+                            { name: 'Camino al campamento', path: '/preparacion' }
                         ].map((item) => (
                             <Link 
                                 key={item.name} 
@@ -107,15 +105,12 @@ const Header: React.FC = () => {
                             </Link>
                         ))}
                         
-                        <button 
-                            onClick={() => {
-                                setIsMenuOpen(false);
-                                setShowModal(true);
-                            }}
-                            className="w-full text-center px-5 py-3 bg-brand-yellow text-brand-blue font-bold rounded-lg hover:bg-brand-orange hover:text-white transition-all shadow-md text-sm uppercase cursor-pointer"
+                        <Link 
+                            to="/pagos"
+                            className="px-5 py-2 bg-brand-yellow text-brand-blue font-bold rounded-full hover:bg-brand-orange hover:text-white transition-all transform hover:scale-105 shadow-md text-sm uppercase cursor-pointer"
                         >
-                            Inscribirse
-                        </button>
+                            Quiero sumarme
+                        </Link>
                     </div>
                 </div>
             </header>

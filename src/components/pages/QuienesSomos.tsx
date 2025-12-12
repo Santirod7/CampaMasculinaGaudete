@@ -135,7 +135,7 @@ const QuienesSomos = () => {
                   <span className="text-slate-200 text-sm font-bold">San Pedro de Colalao</span>
                 </div>
                 <p className="text-slate-500 text-xs mb-3 ml-6">Provincia de Tucumán. Finca "El Chula".</p>
-                <a href="https://maps.google.com/?q=San+Pedro+de+Colalao+Tucuman" target="_blank" rel="noreferrer" className="w-full block text-center bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold py-2 rounded transition-colors">
+                <a href="https://maps.google.com/?q=San+Pedro+de+Colalao+Tucuman" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 bg-yellow-900 hover:bg-red-800 text-white font-bold py-2 px-6 rounded-lg transition-all shadow-lg w-full justify-center">
                   VER MAPA (GOOGLE MAPS)
                 </a>
               </div>
@@ -146,7 +146,7 @@ const QuienesSomos = () => {
           {/* CAMBIO CLAVE: bg-white, textos negros, diseño distinto */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200 group hover:-translate-y-1 transition-all duration-300 flex flex-col relative">
             <div className="absolute top-0 right-0 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-20 shadow-md">
-              LISTA OFICIAL
+              EXCLUSIVO
             </div>
             
             <div className="h-40 overflow-hidden relative shrink-0">
@@ -166,16 +166,16 @@ const QuienesSomos = () => {
             {/* Cuerpo Blanco con letras Negras/Grises */}
             <div className="p-6 bg-white flex-grow flex flex-col items-center justify-center text-center space-y-4">
               <div>
-                <h4 className="text-lg font-bold text-slate-900 mb-2">¿Qué debo llevar?</h4>
+                <h4 className="text-lg font-bold text-slate-900 mb-2">¿Cómo me preparo?</h4>
                 <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                  Lista oficial de ropa, elementos de higiene y supervivencia obligatorios.
+                  Hicimos un portal exclusivo para que puedas llegar en clima al campamento.
                 </p>
               </div>
               <Link 
-                to="/suministros" 
+                to="/preparacion" 
                 className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-lg w-full justify-center"
               >
-                VER LISTADO <ArrowRight size={18} />
+                CAMINO AL CAMPAMENTO <ArrowRight size={18} />
               </Link>
             </div>
           </div>
@@ -239,7 +239,7 @@ const QuienesSomos = () => {
                 El transporte sale puntual desde la sede regional.
               </p>
               <a 
-                href="https://maps.google.com/?q=San+Pedro+de+Colalao+Tucuman" 
+                href="https://maps.app.goo.gl/F11DA7ZDhkSz3dHg8?g_st=iw" 
                 target="_blank" 
                 rel="noreferrer"
                 className="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-6 rounded-lg transition-all flex items-center gap-2 border border-slate-600 hover:border-slate-500 w-full md:w-auto justify-center"

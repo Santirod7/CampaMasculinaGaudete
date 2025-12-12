@@ -18,7 +18,8 @@ const NewsCarousel: React.FC<NewsCarouselProps> = ({ onOpenModal }) => {
       title: "INSCRIPCIÓN ABIERTA",
       subtitle: "Asegura tu lugar en la fila. Cupos limitados.",
       action: "INSCRIBIRSE AHORA",
-      type: "modal"
+      type: "link_interno",
+      path: "/centro-de-informacion"
     },
     {
       id: 2,
@@ -36,7 +37,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = ({ onOpenModal }) => {
       subtitle: "Revisa los suministros necesarios para el combate.",
       action: "VER SUMINISTROS",
       type: "link_interno",
-      path: "/suministros"
+      path: "/preparacion"
     }
   ];
 

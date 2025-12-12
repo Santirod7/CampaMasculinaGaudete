@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CountdownTimer from './CountdownTimer';
 import NewsCarousel from './NewsCarousel'; // Importamos el componente renovado
 import PaymentModal from '../ui/PaymentModal';
+import VideoSection from '../ui/VideoSection';
 
 const Inicio: React.FC = () => {
   const [showModal, setShowModal] = useState(false); // Estado para el Modal
@@ -96,15 +97,19 @@ const Inicio: React.FC = () => {
           </div>
         </section>
 
+<section id="video-section">
+          {/* Aquí incluimos la sección de video */}
+          <VideoSection />
+        </section>
         {/* --- ACTIVIDADES --- */}
         <section id="activities" className="py-20 md:py-32 bg-brand-blue text-white relative">
           <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "30px 30px"}}></div>
           <div className="container mx-auto px-6 relative z-10">
-            <h2 className="text-3xl md:text-5xl font-black text-center mb-4 font-heading text-white uppercase">Nuestras Actividades</h2>
-            <p className="text-center text-brand-yellow mb-16 font-semibold tracking-wider">AVENTURA SIN LÍMITES</p>
+            <h2 className="text-3xl md:text-5xl font-black text-center mb-4 font-heading text-white uppercase">Actividades <span className="text-brand-yellow">extraordinarias</span></h2>
+            <p className="text-center text-brand-yellow mb-16 font-semibold tracking-wider">AVENTURAS IMPERDIBLES</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {['Pionerismo', 'Tiro con Arco', 'Senderismo Nocturno', 'Fogata Mística', 'Rastreo', 'Cocina Rústica'].map((activity, index) => (
+              {['Kayak en El Cadillal', 'Airelibrismo sin igual', 'Pileta exclusiva'].map((activity, index) => (
                 <div key={activity} className="group bg-brand-dark rounded-xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-brand-yellow/50">
                   <div className="relative h-48 overflow-hidden">
                     <img src={`https://picsum.photos/600/400?random=act${index}`} alt={activity} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
