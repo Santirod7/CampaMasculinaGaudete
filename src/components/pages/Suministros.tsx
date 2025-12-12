@@ -74,8 +74,8 @@ const Suministros = () => {
   // --- GRILLA DE RECURSOS (CON MILICANT) ---
   const desafios = [
     {
-      titulo: "Trivia Táctica",
-      desc: "¿Cuánto sabes de supervivencia? Ponlo a prueba.",
+      titulo: "Nivel de estilo miliciano",
+      desc: "¿Cuánto sabes de nuestro estilo? Ponlo a prueba.",
       icon: BrainCircuit,
       color: "text-purple-400",
       bgHover: "group-hover:bg-purple-500/10",
@@ -84,7 +84,7 @@ const Suministros = () => {
       btnText: "Jugar Kahoot"
     },
     {
-      titulo: "Archivo Histórico",
+      titulo: "Drive de fotos",
       desc: "Revive la gloria de los regionales pasados.",
       icon: Image,
       color: "text-blue-400",
@@ -94,13 +94,13 @@ const Suministros = () => {
       btnText: "Ver Fotos"
     },
     {
-      titulo: "Milicant",
-      desc: "El cancionero oficial de la milicia en tu bolsillo.",
+      titulo: "Milican",
+      desc: "Aprende sobre nuestras marchas",
       icon: Music, // Ícono musical
       color: "text-cyan-400",
       bgHover: "group-hover:bg-cyan-500/10",
       border: "hover:border-cyan-500/50",
-      link: "https://milicant.com", // O link a la app store
+      link: "https://wmil.heladeradragon.com.ar/training", // O link a la app store
       btnText: "Ir a las Marchas"
     },
     {
