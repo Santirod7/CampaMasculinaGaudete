@@ -201,7 +201,7 @@ const QuienesSomos = () => {
                     ¿Cómo me inscribo?
                   </h2>
                   <p className="text-slate-400 text-base leading-relaxed">
-                    Hemos preparado un instructivo interactivo fácil de seguir para realizar el pago y el alta del seguro.
+                    Hemos preparado un instructivo interactivo fácil de seguir para realizar el pago e Inscripción.
                   </p>
                   <Link to="/pagos" className="inline-flex items-center justify-center gap-3 bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-amber-600/20 transform hover:-translate-y-1 transition-all w-full lg:w-auto text-lg">
                     ABRIR GUÍA DE INSCRIPCIÓN <ArrowRight size={22} />
@@ -231,12 +231,12 @@ const QuienesSomos = () => {
         <div className="bg-slate-800 rounded-3xl overflow-hidden shadow-xl border border-slate-700 flex flex-col md:flex-row">
             <div className="md:w-1/3 p-8 md:p-12 flex flex-col justify-center items-start">
               <div className="flex items-center gap-2 text-amber-500 mb-4">
-                <MapPin size={24} /> <span className="font-bold tracking-wider text-sm uppercase">Punto de Encuentro</span>
+                <MapPin size={24} /> <span className="font-bold tracking-wider text-sm uppercase">Lugar del campamento</span>
               </div>
-              <h2 className="text-3xl font-bold text-white mb-4 font-serif">Campo La Estancia</h2>
+              <h2 className="text-3xl font-bold text-white mb-4 font-serif">Finca "Los Chulcas" </h2>
               <p className="text-slate-400 mb-8 text-sm leading-relaxed">
                 Ubicado en San Pedro de Colalao, Tucumán.<br/>
-                El transporte sale puntual desde la sede regional.
+                Consulta a tu jefe de ruca, para ver la llegada al lugar.
               </p>
               <a 
                 href="https://maps.app.goo.gl/F11DA7ZDhkSz3dHg8?g_st=iw" 

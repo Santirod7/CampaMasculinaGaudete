@@ -28,7 +28,7 @@ const Inicio: React.FC = () => {
             flex items-center justify-center text-center 
             bg-cover bg-center bg-no-repeat
             h-[80vh] md:h-screen
-            bg-[url('https://picsum.photos/1920/1080?random=hero')]
+            bg-[url('https://img.freepik.com/foto-gratis/altas-montanas-colinas-cubiertas-bosques_181624-15442.jpg?semt=ais_hybrid&w=740&q=80')]
             before:content-['']
             before:absolute
             before:inset-0
@@ -73,23 +73,23 @@ const Inicio: React.FC = () => {
             <div className="w-24 h-1 bg-brand-orange mx-auto mb-10"></div>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Campamento Gaudete no es solo un lugar, es una experiencia transformadora. Bajo el lema del Campamento Regional 26, buscamos fortalecer lazos, superar límites y celebrar la alegría de la hermandad scout.
+              Campamento Gaudete no es solo un lugar, es una experiencia transformadora. En este tan esperado Campamento Regional 26, buscamos fortalecer la amistad regional, superar límites personales y celebrar la alegría en comunidad.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-brand-blue transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <img src="https://picsum.photos/800/600?random=about1" alt="Campers" className="w-full h-full object-cover" />
+                    <img src="https://www.escolaioga.com/wp-content/uploads/2018/07/morning-2243465_1280.jpg" alt="Campers" className="w-full h-full object-cover" />
                 </div>
                 <div className="text-left space-y-6">
                     <div className="bg-brand-light dark:bg-gray-700 p-6 rounded-xl border-l-4 border-brand-blue">
                         <h3 className="text-2xl font-bold mb-2 font-heading text-brand-yellow dark:text-brand-yellow">Nuestra Misión</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Inspirar el crecimiento personal a través de la naturaleza y el servicio comunitario.
+                            Llevar la Palabra de Jesús, bajo la mejor experiencia de nuestro estilo: Los campamentos milicianos.
                         </p>
                     </div>
                     <div className="bg-brand-light dark:bg-gray-700 p-6 rounded-xl border-l-4 border-brand-white">
                         <h3 className="text-2xl font-bold mb-2 font-heading text-brand-yellow dark:text-brand-white">La Experiencia</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Desafíos técnicos, fogatas llenas de mística y la construcción de un mundo mejor.
+                            Arduos desafíos, fogatas amicales llenas de mística y actividades que renuevan el fervor del corazón.
                         </p>
                     </div>
                 </div>

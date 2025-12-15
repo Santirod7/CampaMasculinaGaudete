@@ -38,7 +38,7 @@ const BackgroundMusicPlayer = () => {
           },
           events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange, // Para sincronizar nuestro botón con el reproductor
+            'onStateChange': onPlayerStateChange,
           }
         });
       }
@@ -47,7 +47,7 @@ const BackgroundMusicPlayer = () => {
     // Lógica para cargar la API de YouTube
     if (!window.YT) {
       const tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
+      tag.src = "https://www.youtube.com/iframe_api"; // <-- CORREGIDO: URL DE LA API
       window.onYouTubeIframeAPIReady = createPlayer;
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
@@ -56,12 +56,10 @@ const BackgroundMusicPlayer = () => {
     }
   }, [VIDEO_ID]);
 
-  // Se ejecuta cuando el reproductor está listo para recibir comandos
   const onPlayerReady = (event: any) => {
     event.target.setVolume(volume);
   };
 
-  // Se ejecuta cada vez que el video cambia de estado (Play, Pausa, etc.)
   const onPlayerStateChange = (event: any) => {
     if (event.data === window.YT.PlayerState.PLAYING) {
       setIsPlaying(true);
@@ -70,7 +68,6 @@ const BackgroundMusicPlayer = () => {
     }
   };
 
-  // Función del botón principal
   const togglePlayPause = () => {
     if (!player.current || !player.current.getPlayerState) return;
     
@@ -81,7 +78,6 @@ const BackgroundMusicPlayer = () => {
     }
   };
 
-  // Función del slider de volumen
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseInt(e.target.value, 10);
     setVolume(newVolume);
@@ -92,17 +88,14 @@ const BackgroundMusicPlayer = () => {
 
   return (
     <>
-      {/* 
-        El <iframe> siempre está aquí, pero invisible.
-        Lo ponemos fuera de la vista con `position: absolute` y `opacity: 0`.
-      */}
       <div 
         ref={playerRef} 
         style={{ position: 'absolute', top: '-9999px', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
       ></div>
 
       {/* Controlador visual flotante */}
-      <div className="fixed bottom-6 left-6 z-[100] flex items-center gap-3 group">
+      {/* ELIMINAMOS 'group' porque ya no es necesario para el hover */}
+      <div className="fixed bottom-6 left-6 z-[100] flex items-center gap-3">
         
         {/* BOTÓN PLAY/PAUSA */}
         <button
@@ -115,14 +108,17 @@ const BackgroundMusicPlayer = () => {
           ) : volume === 0 ? (
             <VolumeX className="w-6 h-6" />
           ) : (
-            // Ícono de PLAY inicial
             <Music className="w-6 h-6" />
           )}
         </button>
         
-        {/* SLIDER DE VOLUMEN */}
+        {/* 
+          SLIDER DE VOLUMEN
+          AÑADIMOS 'hidden md:block' para que solo aparezca en DESKTOP
+        */}
         <div 
           className={`
+            hidden md:block  {/* <-- ESTA ES LA LÍNEA MÁGICA */}
             transition-all duration-300 ease-in-out
             bg-slate-800/80 backdrop-blur-md p-2 rounded-full border-2 border-slate-700
             ${isPlaying ? 'w-24 opacity-100' : 'w-0 opacity-0 pointer-events-none'}

@@ -14,7 +14,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = ({ onOpenModal }) => {
   const slides = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1517178313056-6a2c531d041e?q=80&w=2070",
+      image: "https://www.clavesdigital.com.ar/vistas/fotos_noticias/10317-3_1632839819-formulario-inscripciones.congresos.jpg",
       title: "INSCRIPCIÓN ABIERTA",
       subtitle: "Asegura tu lugar en la fila. Cupos limitados.",
       action: "INSCRIBIRSE AHORA",
@@ -23,9 +23,9 @@ const NewsCarousel: React.FC<NewsCarouselProps> = ({ onOpenModal }) => {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1496545672479-7ac37b969871?q=80&w=2070",
+      image: "https://media.lv12.com.ar/p/963cc54c5331785c1f95cfa1ad6767f2/adjuntos/261/imagenes/001/841/0001841288/1200x675/smart/san-pedro-colalao.jpeg",
       title: "CONOCIENDO EL TERRENO",
-      subtitle: "Descubre dónde se librará la batalla.",
+      subtitle: "Descubre dónde se llevará a cabo el campamento.",
       action: "VER UBICACIÓN",
       type: "link_externo",
       url: "https://maps.app.goo.gl/F11DA7ZDhkSz3dHg8?g_st=iw" // <--- PON TU LINK DE MAPS
@@ -33,9 +33,9 @@ const NewsCarousel: React.FC<NewsCarouselProps> = ({ onOpenModal }) => {
     {
       id: 3,
       image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1974",
-      title: "PREPARACIÓN ESPIRITUAL",
-      subtitle: "Revisa los suministros necesarios para el combate.",
-      action: "VER SUMINISTROS",
+      title: "CAMINO AL CAMPAMENTO",
+      subtitle: "Enterate del camino que transitaremos juntos en preparación del campamento.",
+      action: "VER PREPARACIÓN",
       type: "link_interno",
       path: "/preparacion"
     }

@@ -20,8 +20,8 @@ const VideoSection = () => {
           <div className="inline-flex items-center gap-2 text-amber-500 font-bold tracking-widest uppercase text-xs mb-3">
             <Film size={14} /> Multimedia
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white font-serif mb-4">
-            Revive la Mística miliciana
+          <h2 className="text-3xl md:text-5xl font-bold text-white font-heading uppercase mb-4">
+           <span className='text-brand-yellow'>Reviví</span> la Mística miliciana
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto">
             Un vistazo a lo que vivimos en nuestros campamentos. Fraternidad, formación y aventura.

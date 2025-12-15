@@ -15,7 +15,8 @@ import {
   Flashlight,
   BriefcaseMedical,
   Check,
-  Backpack
+  Backpack,
+Video
 } from 'lucide-react';
 
 const Suministros = () => {
@@ -104,9 +105,9 @@ const Suministros = () => {
       btnText: "Ir a las Marchas"
     },
     {
-      titulo: "Desafío de Ingenio",
-      desc: "Resuelve los acertijos para desbloquear pistas.",
-      icon: Gamepad2,
+      titulo: "Video semanal",
+      desc: "Aprende algo nuevo y útil para el campamento.",
+      icon: Video,
       color: "text-green-400",
       bgHover: "group-hover:bg-green-500/10",
       border: "hover:border-green-500/50",
@@ -122,7 +123,7 @@ const Suministros = () => {
       <div className="relative w-full h-[50vh] min-h-[450px] flex items-center justify-center mb-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1510936111840-655664ce87a8?q=80&w=2074" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKnKmofEH0LSqxWJ4UvVKib6aCJE8vHZwxwQ&s" 
             alt="Ambiente de Oración" 
             className="w-full h-full object-cover"
           />
@@ -202,8 +203,8 @@ const Suministros = () => {
       <section className="max-w-6xl mx-auto px-4 mb-24">
           <div className="flex items-center justify-center gap-4 mb-12 opacity-80">
               <div className="h-px w-16 bg-gradient-to-r from-transparent to-slate-600"></div>
-              <h2 className="text-2xl font-bold text-white font-serif uppercase tracking-wider flex items-center gap-3">
-                  <Gamepad2 className="text-amber-500" /> Zona de Desafíos
+              <h2 className="text-2xl font-bold text-white text-center font-serif uppercase tracking-wider flex items-center gap-3">
+                  <Gamepad2 size={50} className="text-amber-500 md:text-amber-500" /> Zona de Desafíos
               </h2>
               <div className="h-px w-16 bg-gradient-to-l from-transparent to-slate-600"></div>
           </div>
@@ -211,12 +212,12 @@ const Suministros = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {desafios.map((item, idx) => (
                   <a key={idx} href={item.link} target="_blank" rel="noreferrer" className={`bg-slate-900/50 backdrop-blur-sm rounded-xl p-6 border border-slate-800 hover:-translate-y-2 transition-all duration-300 group shadow-lg flex flex-col justify-between h-full ${item.border}`}>
-                      <div>
+                      <div className='items-center flex flex-col'>
                           <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 shadow-inner bg-slate-800 ${item.bgHover} ${item.color} group-hover:scale-110`}>
                               <item.icon size={28} />
                           </div>
-                          <h3 className="text-lg font-bold text-white mb-3 font-serif uppercase">{item.titulo}</h3>
-                          <p className="text-slate-400 text-sm mb-6 leading-relaxed">{item.desc}</p>
+                          <h3 className="text-lg font-bold text-center text-white mb-3 font-serif uppercase">{item.titulo}</h3>
+                          <p className="text-slate-400 text-sm mb-6 text-center leading-relaxed">{item.desc}</p>
                       </div>
                       <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-200 transition-colors border-t border-slate-800/50 pt-4 mt-auto">
                           {item.btnText}
@@ -239,7 +240,7 @@ const Suministros = () => {
              </div>
              <h2 className="text-3xl md:text-4xl font-bold text-white font-serif mb-4">¿Qué debo llevar?</h2>
              <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-8">
-               La lista oficial de pertrechos necesarios para la supervivencia y actividades del campamento. 
+               Una lista ayuda de lo necesario para cada experiencia y actividad del campamento. 
                <br/><span className="text-sm italic opacity-70">Haz clic en los elementos para marcarlos.</span>
              </p>
            </div>
