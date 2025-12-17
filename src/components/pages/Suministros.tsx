@@ -81,7 +81,7 @@ const Suministros = () => {
       color: "text-purple-400",
       bgHover: "group-hover:bg-purple-500/10",
       border: "hover:border-purple-500/50",
-      link: "/QuizEstilo",
+      link: "https://mascugaudete.netlify.app/QuizEstilo",
       btnText: "Jugar Quizz"
     },
     {
