@@ -16,7 +16,7 @@ import {
   Sword,
   Crown
 } from 'lucide-react';
-import heroheader from '../../assets/heroheader.jpg';
+import heroheader from '../../assets/DSCN7382.jpg';
 import convocatoriaImg from '../../assets/IMG_2875.jpg';
 import logisticaImg from '../../assets/DSCN6659.jpg';
 import { url } from 'inspector';
