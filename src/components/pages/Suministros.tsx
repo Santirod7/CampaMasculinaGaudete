@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Flag, 
   Image, 
@@ -81,7 +82,7 @@ const Suministros = () => {
       color: "text-purple-400",
       bgHover: "group-hover:bg-purple-500/10",
       border: "hover:border-purple-500/50",
-      link: "https://mascugaudete.netlify.app/QuizEstilo",
+      link: "/QuizEstilo",
       btnText: "Jugar Quizz"
     },
     {
@@ -209,22 +210,49 @@ const Suministros = () => {
               <div className="h-px w-16 bg-gradient-to-l from-transparent to-slate-600"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {desafios.map((item, idx) => (
-                  <a key={idx} href={item.link} target="_blank" rel="noreferrer" className={`bg-slate-900/50 backdrop-blur-sm rounded-xl p-6 border border-slate-800 hover:-translate-y-2 transition-all duration-300 group shadow-lg flex flex-col justify-between h-full ${item.border}`}>
-                      <div className='items-center flex flex-col'>
-                          <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 shadow-inner bg-slate-800 ${item.bgHover} ${item.color} group-hover:scale-110`}>
-                              <item.icon size={28} />
-                          </div>
-                          <h3 className="text-lg font-bold text-center text-white mb-3 font-serif uppercase">{item.titulo}</h3>
-                          <p className="text-slate-400 text-sm mb-6 text-center leading-relaxed">{item.desc}</p>
-                      </div>
-                      <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-200 transition-colors border-t border-slate-800/50 pt-4 mt-auto">
-                          {item.btnText}
-                          <ExternalLink size={14} className="opacity-50 group-hover:opacity-100 transition-opacity"/>
-                      </div>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {desafios.map((item, idx) => {
+                // Verificamos si el link es interno (empieza con "/")
+                const isInternalLink = item.link.startsWith('/');
+
+                // Contenido de la tarjeta (es el mismo para ambos casos)
+                const cardContent = (
+                    <>
+                        <div>
+                            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 shadow-inner bg-slate-800 ${item.bgHover} ${item.color} group-hover:scale-110`}>
+                                <item.icon size={28} />
+                            </div>
+                            <h3 className="text-lg font-bold text-white mb-3 font-serif uppercase">{item.titulo}</h3>
+                            <p className="text-slate-400 text-sm mb-6 leading-relaxed">{item.desc}</p>
+                        </div>
+                        <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-200 transition-colors border-t border-slate-800/50 pt-4 mt-auto">
+                            {item.btnText}
+                            <ExternalLink size={14} className="opacity-50 group-hover:opacity-100 transition-opacity"/>
+                        </div>
+                    </>
+                );
+
+                // Si es interno, usamos <Link>. Si es externo, usamos <a>.
+                return isInternalLink ? (
+                  <Link 
+                    key={idx} 
+                    to={item.link} 
+                    className={`bg-slate-900/50 backdrop-blur-sm rounded-xl p-6 border border-slate-800 hover:-translate-y-2 transition-all duration-300 group shadow-lg flex flex-col justify-between h-full ${item.border}`}
+                  >
+                    {cardContent}
+                  </Link>
+                ) : (
+                  <a 
+                    key={idx} 
+                    href={item.link} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className={`bg-slate-900/50 backdrop-blur-sm rounded-xl p-6 border border-slate-800 hover:-translate-y-2 transition-all duration-300 group shadow-lg flex flex-col justify-between h-full ${item.border}`}
+                  >
+                    {cardContent}
                   </a>
-              ))}
+                );
+              })}
           </div>
       </section>
 

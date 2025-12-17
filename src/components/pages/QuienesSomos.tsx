@@ -16,10 +16,7 @@ import {
   Sword,
   Crown
 } from 'lucide-react';
-import heroheader from '../../assets/DSCN7382.jpg';
-import convocatoriaImg from '../../assets/IMG_2875.jpg';
-import logisticaImg from '../../assets/DSCN6659.jpg';
-import { url } from 'inspector';
+
 
 const QuienesSomos = () => {
   return (
@@ -29,7 +26,7 @@ const QuienesSomos = () => {
       <div className="relative w-full h-[50vh] min-h-[450px] flex items-center justify-center mb-16">
         <div className="absolute inset-0 z-0">
           <img 
-          src={heroheader}
+          src="/DSCN7382.jpg "
             alt="Comunidad Campamento" 
             className="w-full h-full object-cover"
           />
@@ -61,7 +58,7 @@ const QuienesSomos = () => {
             <div className="h-40 overflow-hidden relative shrink-0">
               <div className="absolute inset-0 bg-slate-900/40 z-10 group-hover:bg-slate-900/20 transition-all"></div>
               <img 
-                src={convocatoriaImg}
+                src="/IMG_2875.jpg"
                 alt="Convocatoria" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
               />
@@ -107,7 +104,7 @@ const QuienesSomos = () => {
             <div className="h-40 overflow-hidden relative shrink-0">
               <div className="absolute inset-0 bg-slate-900/40 z-10 group-hover:bg-slate-900/20 transition-all"></div>
               <img 
-                src={logisticaImg}
+                src="/DSCN6659.jpg"
                 alt="Logística" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
               />

@@ -3,9 +3,8 @@ import CountdownTimer from './CountdownTimer';
 import NewsCarousel from './NewsCarousel'; // Importamos el componente renovado
 import PaymentModal from '../ui/PaymentModal';
 import VideoSection from '../ui/VideoSection';
-import imgKayak from '../../assets/kayak.jpg';
-import imgAirelibrismo from '../../assets/DSCN7138.jpg';
-import imgHero from '../../assets/hero-bg.jpg';
+import { bg } from 'date-fns/locale';
+
 
 const Inicio: React.FC = () => {
   const [showModal, setShowModal] = useState(false); // Estado para el Modal
@@ -19,8 +18,8 @@ const Inicio: React.FC = () => {
   const targetYear = now.getMonth() === 0 && now.getDate() < 9 ? now.getFullYear() : now.getFullYear() + 1;
   const targetDate = new Date(targetYear, 0, 9);
   const actividades = [
-                { "actividad": "Kayak en El Cadillal", "imagen": imgKayak}, 
-                { "actividad": "Airelibrismo sin igual", "imagen": imgAirelibrismo}, 
+                { "actividad": "Kayak en El Cadillal", "imagen": `/kayak.jpg`}, 
+                { "actividad": "Airelibrismo sin igual", "imagen": `/DSCN7138.jpg`}, 
                 { "actividad": "Pileta exclusiva", "imagen": "https://turismo.uejn.org.ar/wp-content/uploads/2023/01/complejo-recreativo-SACRA.jpeg_0000_aed5b8ad-efa2-41df-b9f2-258a46d1ead9.jpg"}];
 
 
@@ -41,7 +40,7 @@ const Inicio: React.FC = () => {
             before:bg-black/50
             before:z-0
           "
-          style={{ backgroundImage: `url(${imgHero})`}}
+          style={{ backgroundImage: `url(/hero-bg.jpg)`}}
         >
           <div className="absolute inset-0 bg-brand-blue/70 mix-blend-multiply"></div>
           <div className="relative z-10 p-6 flex flex-col items-center">
