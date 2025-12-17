@@ -25,7 +25,7 @@ const QuienesSomos = () => {
       <div className="relative w-full h-[50vh] min-h-[450px] flex items-center justify-center mb-16">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?q=80&w=2070" 
+            src="../../../public/DSCN7382.jpg" 
             alt="Comunidad Campamento" 
             className="w-full h-full object-cover"
           />
@@ -57,7 +57,7 @@ const QuienesSomos = () => {
             <div className="h-40 overflow-hidden relative shrink-0">
               <div className="absolute inset-0 bg-slate-900/40 z-10 group-hover:bg-slate-900/20 transition-all"></div>
               <img 
-                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2000" 
+                src="../../../public/IMG_2875.jpg" 
                 alt="Convocatoria" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
               />
@@ -81,7 +81,7 @@ const QuienesSomos = () => {
               {/* Rango 2 */}
               <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 transition-colors border border-transparent hover:border-slate-600">
                 <div className="flex items-center gap-3">
-                  <div className="bg-amber-500/10 p-2 rounded text-amber-400"><Sword size={16}/></div>
+                  <div className="bg-amber-500/10 p-2 rounded text-amber-400"><Shield size={16}/></div>
                   <span className="text-sm font-bold text-slate-200">Templarios Menores</span>
                 </div>
                 <span className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">13 - 16 años</span>
@@ -90,7 +90,7 @@ const QuienesSomos = () => {
               {/* Rango 3 */}
               <div className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-700/50 transition-colors border border-transparent hover:border-slate-600">
                 <div className="flex items-center gap-3">
-                  <div className="bg-red-500/10 p-2 rounded text-red-400"><Crown size={16}/></div>
+                  <div className="bg-red-500/10 p-2 rounded text-red-400"><Shield size={16}/></div>
                   <span className="text-sm font-bold text-slate-200">Templarios Mayores</span>
                 </div>
                 <span className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">17 - 18 años</span>
@@ -103,7 +103,7 @@ const QuienesSomos = () => {
             <div className="h-40 overflow-hidden relative shrink-0">
               <div className="absolute inset-0 bg-slate-900/40 z-10 group-hover:bg-slate-900/20 transition-all"></div>
               <img 
-                src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2000" 
+                src="../../../public/DSCN6659.jpg" 
                 alt="Logística" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
               />
@@ -152,7 +152,7 @@ const QuienesSomos = () => {
             <div className="h-40 overflow-hidden relative shrink-0">
               <div className="absolute inset-0 bg-slate-900/10 z-10 group-hover:bg-slate-900/5 transition-all"></div>
               <img 
-                src="https://images.unsplash.com/photo-1624523992220-43b59a68ccb2?q=80&w=2000" 
+                src="https://as01.epimg.net/deporteyvida/imagenes/2018/06/17/portada/1529248676_745290_1529249202_noticia_normal_recorte1.jpg" 
                 alt="Mochila" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
               />
@@ -184,7 +184,8 @@ const QuienesSomos = () => {
       </div>
 
       {/* --- SECCIÓN 2: EL PUENTE (GUÍA DE INSCRIPCIÓN) --- */}
-      <section className="py-16 relative mb-16">
+      <section className="py-8 relative mb-16">
+        <h2 className='text-2xl text-center font-bold mb-20 text-white font-serif leading-tight'>Proximamente adjuntaremos la ficha médica a llenar...</h2>
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-1 border border-slate-700 shadow-2xl relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-amber-500/0 via-amber-500/20 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-xl"></div>
@@ -249,7 +250,7 @@ const QuienesSomos = () => {
             </div>
             <div className="md:w-2/3 bg-slate-900 relative h-80 md:h-auto group">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14197.876797825313!2d-65.5000000!3d-26.2333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94223f66c9cc2a43%3A0x6b776269555c8296!2sSan%20Pedro%20de%20Colalao%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" 
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2988.322693226966!2d-65.51057542458543!3d-26.18389537708904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDExJzAyLjAiUyA2NcKwMzAnMjguOCJX!5e1!3m2!1ses-419!2sar!4v1765806325417!5m2!1ses-419!2sar" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

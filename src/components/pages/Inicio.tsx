@@ -15,6 +15,10 @@ const Inicio: React.FC = () => {
   const now = new Date();
   const targetYear = now.getMonth() === 0 && now.getDate() < 9 ? now.getFullYear() : now.getFullYear() + 1;
   const targetDate = new Date(targetYear, 0, 9);
+  const actividades = [
+                { "actividad": "Kayak en El Cadillal", "imagen": "../../../public/DSCN6748.jpg"}, 
+                { "actividad": "Airelibrismo sin igual", "imagen": "../../../public/DSCN7138.jpg"}, 
+                { "actividad": "Pileta exclusiva", "imagen": "https://turismo.uejn.org.ar/wp-content/uploads/2023/01/complejo-recreativo-SACRA.jpeg_0000_aed5b8ad-efa2-41df-b9f2-258a46d1ead9.jpg"}];
 
 
   return (
@@ -28,7 +32,7 @@ const Inicio: React.FC = () => {
             flex items-center justify-center text-center 
             bg-cover bg-center bg-no-repeat
             h-[80vh] md:h-screen
-            bg-[url('https://img.freepik.com/foto-gratis/altas-montanas-colinas-cubiertas-bosques_181624-15442.jpg?semt=ais_hybrid&w=740&q=80')]
+            bg-[url('../../../public/DSCN6862.jpg')]
             before:content-['']
             before:absolute
             before:inset-0
@@ -83,13 +87,13 @@ const Inicio: React.FC = () => {
                     <div className="bg-brand-light dark:bg-gray-700 p-6 rounded-xl border-l-4 border-brand-blue">
                         <h3 className="text-2xl font-bold mb-2 font-heading text-brand-yellow dark:text-brand-yellow">Nuestra Misión</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Llevar la Palabra de Jesús, bajo la mejor experiencia de nuestro estilo: Los campamentos milicianos.
+                            Vivenciar el campamento como una verdadera escuela de virtudes para que el niño y adolescente pueda encontrarse con la naturaleza, compartir con sus amigos milicianos, formándose integralmente y encontrándose con Dios.
                         </p>
                     </div>
                     <div className="bg-brand-light dark:bg-gray-700 p-6 rounded-xl border-l-4 border-brand-white">
                         <h3 className="text-2xl font-bold mb-2 font-heading text-brand-yellow dark:text-brand-white">La Experiencia</h3>
                         <p className="text-gray-600 dark:text-gray-300">
-                            Arduos desafíos, fogatas amicales llenas de mística y actividades que renuevan el fervor del corazón.
+                            Actividades de airelibrismo, amistad miliciana, fogones, contacto con la naturaleza. Momentos únicos que solo nos brinda el campamento.
                         </p>
                     </div>
                 </div>
@@ -109,14 +113,15 @@ const Inicio: React.FC = () => {
             <p className="text-center text-brand-yellow mb-16 font-semibold tracking-wider">AVENTURAS IMPERDIBLES</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {['Kayak en El Cadillal', 'Airelibrismo sin igual', 'Pileta exclusiva'].map((activity, index) => (
-                <div key={activity} className="group bg-brand-dark rounded-xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-brand-yellow/50">
+              {
+              actividades.map((activity) => (
+                <div key={activity.actividad} className="group bg-brand-dark rounded-xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 border border-white/10 hover:border-brand-yellow/50">
                   <div className="relative h-48 overflow-hidden">
-                    <img src={`https://picsum.photos/600/400?random=act${index}`} alt={activity} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={activity.imagen} alt={activity.actividad} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent opacity-60"></div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 font-heading text-brand-yellow">{activity}</h3>
+                    <h3 className="text-xl font-bold mb-2 font-heading text-brand-yellow">{activity.actividad}</h3>
                     <p className="text-gray-400 text-sm">Desarrolla tus habilidades y supera tus propios límites.</p>
                   </div>
                 </div>

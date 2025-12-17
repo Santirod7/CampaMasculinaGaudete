@@ -9,6 +9,7 @@ import SplashScreen from './components/pages/SplashScreen';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import QuienesSomos from './components/pages/QuienesSomos';
 import Suministros from './components/pages/Suministros';
+import EstiloQuiz from './components/pages/EstiloQuiz';
 import BackgroundMusicPlayer from './components/ui/BackgroundMusicPlayer';
 // Importaremos las otras páginas a medida que las creemos
 // import Pagos from './pages/Pagos'; 
@@ -34,6 +35,7 @@ function App() {
       <Route path="/centro-de-informacion" element={<QuienesSomos />} />
       <Route path="/pagos" element={<Pagos />} />
       <Route path="/preparacion" element={<Suministros />} />
+      <Route path="/QuizEstilo" element={<EstiloQuiz />} />
         {/* Aquí agregaremos las otras secciones en el futuro */}
         {/* <Route path="/pagos" element={<Pagos />} /> */}
       </Routes>

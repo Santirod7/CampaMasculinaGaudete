@@ -81,17 +81,17 @@ const Suministros = () => {
       color: "text-purple-400",
       bgHover: "group-hover:bg-purple-500/10",
       border: "hover:border-purple-500/50",
-      link: "https://kahoot.it",
-      btnText: "Jugar Kahoot"
+      link: "/QuizEstilo",
+      btnText: "Jugar Quizz"
     },
     {
       titulo: "Drive de fotos",
-      desc: "Revive la gloria de los regionales pasados.",
+      desc: "Revive la gloria del regional Ciudadela 2025.",
       icon: Image,
       color: "text-blue-400",
       bgHover: "group-hover:bg-blue-500/10",
       border: "hover:border-blue-500/50",
-      link: "https://drive.google.com",
+      link: "https://drive.google.com/drive/folders/1i4FAKIQOYurkpTRkytJR7BNRYdIRO8hh?usp=drive_link",
       btnText: "Ver Fotos"
     },
     {
@@ -258,7 +258,7 @@ const Suministros = () => {
           />
           <CategoryCard 
             title="Indumentaria" icon={<Shirt className="text-green-500" size={24} />}
-            items={["Uniforme completo", "Ropa fajina (Resistente)", "Abrigo (Polar/Campera)", "3 pares zapatillas", "Ropa interior (x4)", "Gorra/Sombrero"]}
+            items={["Uniforme completo", "Ropa fajina (Resistente)", "Abrigo y campera impermeable", "Pares zapatillas", "Ropa interior", "Gorra"]}
           />
           <CategoryCard 
             title="Higiene" icon={<BriefcaseMedical className="text-red-500" size={24} />}

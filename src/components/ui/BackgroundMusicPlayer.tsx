@@ -19,7 +19,7 @@ const BackgroundMusicPlayer = () => {
   const player = useRef<any>(null);
 
   // ID del video de YouTube
-  const VIDEO_ID = "dQw4w9WgXcQ"; // Reemplázalo por el tuyo
+  const VIDEO_ID = "tqhFUQtTsoA"; // Reemplázalo por el tuyo
 
   useEffect(() => {
     // Función para crear el reproductor

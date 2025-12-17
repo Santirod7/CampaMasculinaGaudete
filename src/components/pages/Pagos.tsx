@@ -158,6 +158,19 @@ const Pagos = () => {
 
           {/* SECCIÓN B: ALERTAS */}
           <div>
+                <div className="flex  flex-col gap-4">
+                    <p className="pb-7 pt-0 mb-6 text-slate-400 text-center">
+                      Si tienes problemas administrativos con el pago o dudas específicas sobre la inscripción:
+                    <a 
+                      href="https://wa.me/+5493814780132" // Poner número real aquí
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="inline-flex items-center align-middle mx-3 gap-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg transition-colors w-fit shadow-lg shadow-green-600/20"
+                    >
+                      <MessageCircle size={18} /> Contactar
+                    </a>
+                    </p>
+                  </div>
             <div className="flex justify-center mb-10">
               <span className="bg-amber-500 text-white px-6 py-3 rounded-lg font-serif font-bold text-xl md:text-2xl shadow-lg shadow-amber-500/20 uppercase tracking-wide flex items-center gap-3">
                  <AlertTriangle size={24} className="text-white" /> Alertas Administrativas
@@ -223,11 +236,11 @@ const Pagos = () => {
                 respuesta={
                   <div className="flex flex-col gap-4">
                     <p className="text-slate-300">
-                      Las secciones (Adherentes, Escuderos, Milicianos) dependen de la edad y el año de nacimiento.
-                      Puedes ver la tabla completa en el <strong>Portal de Padres</strong>.
+                      Las secciones dependen de la edad y el año de nacimiento.
+                      Puedes ver esta información aquí en el <strong>Centro de información</strong>.
                     </p>
                     <Link to="/quienes-somos" className="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white py-2 px-4 rounded-lg transition-colors w-fit border border-slate-600">
-                      Ir a Quiénes Somos / Portal Padres <ExternalLink size={16} />
+                      Centro de información <ExternalLink size={16} />
                     </Link>
                   </div>
                 }
