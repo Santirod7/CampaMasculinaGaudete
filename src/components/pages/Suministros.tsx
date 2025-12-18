@@ -112,7 +112,7 @@ const Suministros = () => {
       color: "text-green-400",
       bgHover: "group-hover:bg-green-500/10",
       border: "hover:border-green-500/50",
-      link: "https://canva.com",
+      link: "https://youtu.be/HywASqUu5oE?si=hoOIG1RRnFTwBjJI",
       btnText: "Iniciar Misión"
     }
   ];
